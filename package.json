@@ -1,0 +1,13 @@
+{
+    "name": "archetype",
+    "description": "Simple archetypes.",
+    "author": {
+        "name": "simplyianm",
+        "email": "ianmacalinao@gmail.com",
+        "website": "http://simplyian.com"
+    },
+    "version": "0.0.1",
+    "dependencies": {
+        "mkdirp": "*"
+    }
+}
