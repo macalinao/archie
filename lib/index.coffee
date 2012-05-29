@@ -1,5 +1,5 @@
 """
-archetype
+archie
 
 It's tiny!
 """
@@ -44,4 +44,3 @@ copyAndFilter = (src, dest, vars) ->
     # Filter a file
     fileStr = fs.readFileSync src, 'utf8'
     fs.writeFileSync dest, filterStr(fileStr, vars), 'utf8' # Save
-

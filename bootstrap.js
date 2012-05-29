@@ -1,2 +1,2 @@
 require('coffee-script');
-module.exports = require('./lib/archetype');
+module.exports = require('./lib');

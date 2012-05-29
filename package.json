@@ -1,6 +1,6 @@
 {
-    "name": "archetype",
-    "description": "Simple archetypes.",
+    "name": "archie",
+    "description": "Simple archetypes inspired by mvn archetype:generate.",
     "author": {
         "name": "Ian Macalinao",
         "email": "ianmacalinao@gmail.com",
@@ -10,9 +10,15 @@
     "scripts": {
         "test": "make test"
     },
+    keywords: [
+        "skeleton",
+        "archetype",
+        "scaffold",
+        "generator"
+    ],
     "main": "bootstrap",
     "bin": {
-        "node-arch": "./bin/node-arch"
+        "node-arch": "./bin/archie"
     },
     "dependencies": {
         "coffee-script": "*",
