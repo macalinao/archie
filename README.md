@@ -33,6 +33,8 @@ archetype.generateFromDir('path/to/archetype/dir', 'path/to/destination/dir', {
 });
 ```
 
+Destination dir does not have to be created beforehand. It should be empty, however, or files present in the directory will be overwritten.
+
 License
 -------
 
