@@ -22,6 +22,8 @@ exports.generate = (src, dest, vars) ->
   mkdirp.sync dest
   copyAndFilter src, dest, vars
 
+exports.cli = require './cli'
+
 copyAndFilter = (src, dest, vars) ->
 
   filterStr = (str, vars) ->
@@ -42,3 +44,4 @@ copyAndFilter = (src, dest, vars) ->
     # Filter a file
     fileStr = fs.readFileSync src, 'utf8'
     fs.writeFileSync dest, filterStr(fileStr, vars), 'utf8' # Save
+

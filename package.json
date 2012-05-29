@@ -10,10 +10,15 @@
     "scripts": {
         "test": "make test"
     },
+    "main": "bootstrap",
+    "bin": {
+        "node-arch": "./bin/node-arch"
+    },
     "dependencies": {
         "coffee-script": "*",
         "mkdirp": "*",
         "mocha": "*",
-        "should": "*"
+        "should": "*",
+        "optimist": "*"
     }
 }

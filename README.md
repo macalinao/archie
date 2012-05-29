@@ -14,11 +14,11 @@ Usage (terminal)
 ------------
 
 ```
-node-arch archetype-name project-name --arg1 "My Argument"
+node-arch gen archetype-name project-name --arg1 "My Argument"
 ```
 
-* `archetype-name` is the name of the archetype you wish to use. This could also be a path to a directory if you specify the `--dir` option.
-* `project-name` is the name of the project. The directory created is named this.
+* `archetype-name` is the name of the archetype you wish to use. This could also be a path to a directory if you specify the `-d` option.
+* `project-name` is the name of the project. The directory created is named this. (In the API this is the projectName variable)
 * `--var1 "My Variable"` represents a variable.
 
 Usage (API)
