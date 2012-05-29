@@ -4,5 +4,8 @@ archetype
 is AWESOME!
 """
 
-exports.generate = (path, vars) ->
-  return
+fs = require 'fs'
+mkdirp = require 'mkdirp'
+
+exports.generate = (path, dest, vars) ->
+  

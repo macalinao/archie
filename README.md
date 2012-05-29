@@ -27,12 +27,10 @@ Usage (API)
 ```javascript
 var archetype = require('archetype')
 
-var gen = archetype.generateFromDir('path/to/archetype/dir', {
+archetype.generateFromDir('path/to/archetype/dir', 'path/to/destination/dir', {
     var1: value,
     "var 2": value
 });
-
-gen.place('name/of/destination/dir');
 ```
 
 License
