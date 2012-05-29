@@ -8,32 +8,37 @@ fs = require 'fs'
 path = require 'path'
 mkdirp = require 'mkdirp'
 
-exports.generate = (path, dest, vars) ->
+exports.generate = (src, dest, vars) ->
   """
   Generates a new archetype.
 
-  @param path The path to the archetype.
+  @param src The path to the archetype.
   @param dest The destination to write the generated archetype to.
   @param vars The variables to replace as an object.
   """
-  mkdirp.sync dest
-  copyAndFilter path, dest
+  if not vars?
+    vars = {}
 
-copyAndFilter = (src, dest) ->
+  mkdirp.sync dest
+  copyAndFilter src, dest, vars
+
+copyAndFilter = (src, dest, vars) ->
+
+  filterStr = (str, vars) ->
+    for tvar of vars
+      str = str.replace new RegExp('\\$\{' + tvar.replace('/', '\\/') + '\\}', 'g'), vars[tvar]
+    return str
+
   if fs.statSync(src).isDirectory()
     # Filter a directory recursively
     mkdirp.sync dest
 
     files = fs.readdirSync src
     for file in files
-      newName = replaceStr path.basename(file), vars
-      copyAndFilter path.join(src, file), path.join(dest, newName)
+      newName = filterStr path.basename(file), vars
+      copyAndFilter path.join(src, file), path.join(dest, newName), vars
 
   else
     # Filter a file
     fileStr = fs.readFileSync src, 'utf8'
-    fs.writeFileSync dest, replaceStr(fileStr, vars), 'utf8' # Save
-
-replaceStr = (str, vars) ->
-  for var of vars
-    fileStr.replace new RegExp('\\$\{' + var.replace('/', '\\/') + '\\}', 'g'), vars[var]
+    fs.writeFileSync dest, filterStr(fileStr, vars), 'utf8' # Save

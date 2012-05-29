@@ -2,12 +2,18 @@
     "name": "archetype",
     "description": "Simple archetypes.",
     "author": {
-        "name": "simplyianm",
+        "name": "Ian Macalinao",
         "email": "ianmacalinao@gmail.com",
         "website": "http://simplyian.com"
     },
     "version": "0.0.1",
+    "scripts": {
+        "test": "make test"
+    },
     "dependencies": {
-        "mkdirp": "*"
+        "coffee-script": "*",
+        "mkdirp": "*",
+        "mocha": "*",
+        "should": "*"
     }
 }
