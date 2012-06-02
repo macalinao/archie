@@ -1,0 +1,12 @@
+.npmignore
+.gitignore
+.travis.yml
+
+*.sublime-project
+*.sublime-workspace
+
+Makefile
+README.md
+
+archetypes/
+test/
