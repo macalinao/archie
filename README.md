@@ -10,6 +10,12 @@ of the variable that will be replaced in the file.
 This module was greatly inspired by Apache Maven. If you do anything on the JVM,
 check it out. It's holy.
 
+Installation
+------------
+```
+npm install -g archie
+```
+
 Quickstart
 ----------
 ```
