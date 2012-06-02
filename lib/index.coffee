@@ -4,31 +4,34 @@ archie
 It's tiny!
 """
 
-exec = require('child_process').exec
 request = require 'superagent'
 fs = require 'fs'
 path = require 'path'
 mkdirp = require 'mkdirp'
-rimraf = require 'rimraf'
 
 exports.generateFromRepo = (arch, dest, vars) ->
-  temp = './~temp'
-
-  checkIfDir = (folder) ->
-    try
-      return fs.statSync(temp).isDirectory()
-    catch error
-      return false
-
-  while checkIfDir temp
-    temp += 'p'
-  mkdirp temp
-
   arch = arch.toLowerCase()
-
-  req = request.get 'https://raw.github.com/simplyianm/archie/master/archetypes/simple.json'
+  req = request.get "https://raw.github.com/simplyianm/archie/master/archetypes/#{arch}.json"
   req.end (res) ->
-    archetype = res.body
+    text = res.text
+    if text is null
+      console.error "ERROR: Attempted to generate from invalid archetype `#{arch}`!"
+      return
+
+    archetype = null
+    try
+      archetype = JSON.parse res.text
+    catch error
+      console.error "ERROR: Invalid JSON archetype description encountered: `#{arch}`\n" + error
+      return
+
+    type = archetype.type
+    if type is null
+      console.error "ERROR: Invalid JSON archetype description `#{arch}` due to a lack of type!"
+      return
+
+    loaderPath = './types/' + archetype.type
+    require(loaderPath) archetype, vars
 
 exports.generate = (src, dest, vars) ->
   """
