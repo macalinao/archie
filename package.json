@@ -1,5 +1,6 @@
 {
     "name": "archie",
+    "preferGlobal": "true",
     "description": "Simple archetypes inspired by mvn archetype:generate.",
     "author": {
         "name": "Ian Macalinao",
@@ -17,6 +18,10 @@
         "generator"
     ],
     "main": "bootstrap",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/simplyianm/archie.git"
+    },
     "bin": {
         "archie": "./bin/archie"
     },
@@ -29,5 +34,8 @@
         "rimraf": "*",
         "superagent": "*"
     },
-    "license": "Apache"
+    "license": "Apache",
+    "engine": {
+        "node": ">=0.4"
+    }
 }
