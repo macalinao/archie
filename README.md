@@ -1,6 +1,8 @@
 archie
 ==============
 
+![Archie, a totally uncopyrighted image.](http://upload.wikimedia.org/wikipedia/en/0/0d/Archieandrwcmc.png)
+
 **archie** is a simple archetype system for Node.js.
 
 Archetypes are essentially directories containing a ton of standard files.
