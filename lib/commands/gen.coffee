@@ -19,4 +19,10 @@ module.exports = ->
   project = argv.n
   path = argv.p
 
+  archie = require '../'
 
+  unless path
+    archie.generateFromRepo archetype, './#{project}/', argv
+
+  else
+    archie.generate archetype, './#{project}/', argv

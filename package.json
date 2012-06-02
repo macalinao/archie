@@ -18,13 +18,15 @@
     ],
     "main": "bootstrap",
     "bin": {
-        "node-arch": "./bin/archie"
+        "archie": "./bin/archie"
     },
     "dependencies": {
         "coffee-script": "*",
         "mkdirp": "*",
         "mocha": "*",
         "should": "*",
-        "optimist": "*"
-    }
+        "optimist": "*",
+        "rimraf": "*"
+    },
+    "license": "Apache"
 }

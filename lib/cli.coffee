@@ -12,7 +12,7 @@ module.exports = ->
     console.log \
       """
       Unknown command '#{cmd}'.
-      Run 'node-arch help' for a list of available commands.
+      Run 'archie help' for a list of available commands.
       """
     process.exit 1
 

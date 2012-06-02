@@ -1,7 +1,7 @@
 module.exports = ->
   console.log \
     """
-    Usage: node-arch <command> [args]
+    Usage: archie <command> [args]
 
     Commands:
       gen     :  Generates an archetype.

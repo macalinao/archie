@@ -4,9 +4,28 @@ archie
 It's tiny!
 """
 
+exec = require('child_process').exec
+https = require 'https'
 fs = require 'fs'
 path = require 'path'
 mkdirp = require 'mkdirp'
+rimraf = require 'rimraf'
+
+exports.generateFromRepo = (arch, dest, vars) ->
+  temp = './~temp'
+  while fs.statSync(temp).isDirectory()
+    temp += 'p'
+  mkdirp temp
+
+  arch = arch.toLowerCase()
+  contents = ''
+
+  https.get
+    host: 'raw.github.com'
+    path: '/simplyianm/archie/master/archetypes/#{arch}.json'
+  , (res) -> res.on 'data', (d) -> contents += d
+
+  console.log contents
 
 exports.generate = (src, dest, vars) ->
   """
@@ -33,7 +52,7 @@ copyAndFilter = (src, dest, vars) ->
 
   if fs.statSync(src).isDirectory()
     # Filter a directory recursively
-    mkdirp.sync dest
+    mkdirp dest
 
     files = fs.readdirSync src
     for file in files
