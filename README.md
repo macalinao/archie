@@ -3,11 +3,8 @@ archie
 
 ![Archie, a totally uncopyrighted image.](http://upload.wikimedia.org/wikipedia/en/0/0d/Archieandrwcmc.png)
 
-**archie** is a simple archetype system for Node.js.
-
-Archetypes are essentially directories containing a ton of standard files.
-Archetype variables are declared with `${varname}`, where `varname` is the name
-of the variable that will be replaced in the file.
+**archie** is a simple archetype system for Node.js. archie takes an archetype (essentially a folder),
+filters the files by replacing variables with specified values, and puts it in a new folder.
 
 This module was greatly inspired by Apache Maven. If you do anything on the JVM,
 check it out. It's holy.
