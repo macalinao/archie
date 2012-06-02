@@ -10,6 +10,18 @@ of the variable that will be replaced in the file.
 This module was greatly inspired by Apache Maven. If you do anything on the JVM,
 check it out. It's holy.
 
+Quickstart
+----------
+```
+archie gen -a simple -n myproject
+```
+
+This should create a new directory named `myproject` containing some files.
+This project is based off a direct clone from [https://github.com/simplyianm/node-simple-archetype].
+
+A list of archetypes currently supported can be found in the `archetypes` directory.
+To use an archetype, simply type its file name minus the `.json` at the end.
+
 Usage (terminal)
 ------------
 
