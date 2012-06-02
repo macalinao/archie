@@ -26,9 +26,15 @@ exports.generateFromRepo = (arch, dest, vars) ->
       return
 
     type = archetype.type
-    if type is null
+    unless type?
       console.error "ERROR: Invalid JSON archetype description `#{arch}` due to a lack of type!"
       return
+
+    defaults = archetype.defaults
+    if defaults?
+      # Fill 'er up!
+      for own name, val of defaults
+        vars[name] = val unless vars[name]?
 
     loaderPath = './types/' + archetype.type
     require(loaderPath) archetype, vars
