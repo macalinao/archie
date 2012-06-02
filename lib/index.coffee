@@ -5,7 +5,7 @@ It's tiny!
 """
 
 exec = require('child_process').exec
-https = require 'https'
+request = require 'superagent'
 fs = require 'fs'
 path = require 'path'
 mkdirp = require 'mkdirp'
@@ -13,19 +13,22 @@ rimraf = require 'rimraf'
 
 exports.generateFromRepo = (arch, dest, vars) ->
   temp = './~temp'
-  while fs.statSync(temp).isDirectory()
+
+  checkIfDir = (folder) ->
+    try
+      return fs.statSync(temp).isDirectory()
+    catch error
+      return false
+
+  while checkIfDir temp
     temp += 'p'
   mkdirp temp
 
   arch = arch.toLowerCase()
-  contents = ''
 
-  https.get
-    host: 'raw.github.com'
-    path: '/simplyianm/archie/master/archetypes/#{arch}.json'
-  , (res) -> res.on 'data', (d) -> contents += d
-
-  console.log contents
+  req = request.get 'https://raw.github.com/simplyianm/archie/master/archetypes/simple.json'
+  req.end (res) ->
+    archetype = res.body
 
 exports.generate = (src, dest, vars) ->
   """

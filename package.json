@@ -26,7 +26,8 @@
         "mocha": "*",
         "should": "*",
         "optimist": "*",
-        "rimraf": "*"
+        "rimraf": "*",
+        "superagent": "*"
     },
     "license": "Apache"
 }
