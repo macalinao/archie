@@ -1,0 +1,9 @@
+{
+    "type": "git",
+    "url": "git@github.com:simplyianm/mocha-coffeescript-boilerplate.git",
+    "defaults": {
+        "author": "Your Name",
+        "version": "1.0.0",
+        "description": "An app made with Mocha and Coffeescript."
+    }
+}
