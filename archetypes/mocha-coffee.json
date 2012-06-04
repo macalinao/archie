@@ -1,6 +1,6 @@
 {
     "type": "git",
-    "url": "git@github.com:simplyianm/mocha-coffeescript-boilerplate.git",
+    "url": "git@github.com:simplyianm/mocha-coffee.git",
     "defaults": {
         "author": "Your Name",
         "version": "1.0.0",
