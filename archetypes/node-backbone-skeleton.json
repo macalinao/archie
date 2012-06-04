@@ -1,0 +1,9 @@
+{
+    "type": "git",
+    "url": "git://github.com/simplyianm/node-backbone-skeleton.git",
+    "defaults": {
+        "author": "Your Name",
+        "version": "1.0.0",
+        "description": "A simple app."
+    }
+}
