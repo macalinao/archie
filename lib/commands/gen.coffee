@@ -3,14 +3,14 @@ module.exports = ->
     .usage('Usage: archie gen -a [archetype] -n [name] --arg1 ...')
 
     .alias('a', 'archetype')
-    .describe('a', 'The name (or path, with -p) of the archetype.')
+    .describe('a', 'Name (or path, with -p) of the archetype.')
 
     .alias('n', 'name')
-    .describe('n', 'The name of the project.')
+    .describe('n', 'Name of the project.')
 
     .boolean('p')
     .alias('p', 'path')
-    .describe('p', 'The path to the archetype.')
+    .describe('p', 'Path to the archetype.')
 
     .demand(['a', 'n'])
     .argv
